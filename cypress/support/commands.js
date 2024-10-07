@@ -6,4 +6,14 @@ Cypress.Commands.add('VendorLogin', () => {
   });
 
 
+  Cypress.Commands.add('OrangeHRMlogin', () => {
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+
+    // Test with both incorrect username and password
+    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').click().type('Admin');
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').click().type('admin123');
+    cy.get('.oxd-button').click();
+  });
+
+
   
